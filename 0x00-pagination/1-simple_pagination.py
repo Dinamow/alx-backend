@@ -27,20 +27,22 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
-            """ Finds the correct indexes to paginate dataset correctly
-                and return the appropriate page of the dataset
-                Args:
-                    page: int
-                    page_size: int
-                Return:
-                    List[List]:
-            """
-            
-            assert isinstance(page, int) and isinstance(page_size, int)
-            assert page > 0 and page_size > 0
-            all_data = self.dataset()
-            wanted_index = index_range(page, page_size)
-            return [] if wanted_index[0] >= len(all_data) else all_data[wanted_index[0]: wanted_index[1]]
+        """
+            Finds the correct indexes to paginate dataset correctly
+            and return the appropriate page of the dataset
+            Args:
+                page: int
+                page_size: int
+            Return:
+                List[List]:
+        """
+
+        assert isinstance(page, int) and isinstance(page_size, int)
+        assert page > 0 and page_size > 0
+        all_data = self.dataset()
+        wanted_index = index_range(page, page_size)
+        return [] if wanted_index[0] >= len(all_data) else\
+            all_data[wanted_index[0]: wanted_index[1]]
 
 
 def index_range(page: int, page_size: int) -> tuple:
