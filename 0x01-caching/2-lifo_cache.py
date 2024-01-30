@@ -17,12 +17,12 @@ class LIFOCache(BaseCaching):
         __init__: Initialize the LIFOCache object.
         put: Add an item to the cache.
         get: Get an item from the cache by key.
-        
+
         put: Add an item to the cache.
-        
+
         get: Get an item from the cache by key.
     """
-    
+
     def __init__(self):
         """Initialize the LIFOCache object.
         """

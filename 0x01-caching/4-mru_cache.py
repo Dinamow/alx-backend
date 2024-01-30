@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """mru cache system
 """
 from base_caching import BaseCaching
@@ -5,28 +6,32 @@ from base_caching import BaseCaching
 
 class MRUCache(BaseCaching):
     """MRU cache class.
-    
+
     This class represents a Most-Recently-Used (MRU) cache implementation.
     It inherits from the BaseCaching class.
-    
+
     Attributes:
-        MAX_ITEMS (int): The maximum number of items that the cache can hold.
-        cache_data (dict): A dictionary to store the key-value pairs of the cache.
-        __last (list): A list to keep track of the most recently used keys in the cache.
-    
+        MAX_ITEMS (int):
+            The maximum number of items that the cache can hold.
+        cache_data (dict):
+            A dictionary to store the key-value pairs of the cache.
+        __last (list):
+            A list to keep track of the most recently used keys in the cache.
+
     Methods:
-    
+
         __init__: Initialize the MRUCache object.
         put: Add an item to the cache.
         get: Get an item from the cache by key.
     """
+
     def __init__(self):
         """
         Initializes the LRU Cache object.
         """
         super().__init__()
         self.__last = []
-    
+
     def put(self, key, item):
         """
         Add an item to the cache.
@@ -60,7 +65,8 @@ class MRUCache(BaseCaching):
             key: The key of the item to be retrieved.
 
         Returns:
-            The item associated with the key, or None if the key is not in the cache.
+            The item associated with the key,
+            or None if the key is not in the cache.
         """
         if key is None or key not in self.cache_data:
             return None

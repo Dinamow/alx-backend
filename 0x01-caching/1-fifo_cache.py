@@ -15,7 +15,6 @@ class FIFOCache(BaseCaching):
         """initializer"""
         super().__init__()
 
-
     def put(self, key, item):
         """put method"""
         if key is None or item is None:
@@ -26,7 +25,7 @@ class FIFOCache(BaseCaching):
                 print("DISCARD: {}".format(first))
                 del self.cache_data[first]
         self.cache_data[key] = item
-    
+
     def get(self, key):
         """get method"""
         if key is None or key not in self.cache_data:
