@@ -6,7 +6,8 @@ from base_caching import BaseCaching
 
 class LFUCache(BaseCaching):
     """
-    LFUCache class represents a Least Frequently Used (LFU) cache implementation.
+    LFUCache class represents a Least Frequently Used
+    (LFU) cache implementation.
     It inherits from the BaseCaching class.
     """
 
@@ -20,7 +21,8 @@ class LFUCache(BaseCaching):
     def put(self, key, item):
         """
         Adds an item to the cache with the given key.
-        If the cache is full, it removes the least frequently used item(s) before adding the new item.
+        If the cache is full,
+        it removes the least frequently used item before adding the new item.
 
         Args:
             key: The key of the item to be added.
@@ -56,7 +58,8 @@ class LFUCache(BaseCaching):
             key: The key of the item to be retrieved.
 
         Returns:
-            The item associated with the given key, or None if the key is not found in the cache.
+            The item associated with the given key,
+            or None if the key is not found in the cache.
         """
         if key is None or key not in self.cache_data:
             return None
