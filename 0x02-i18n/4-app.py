@@ -18,11 +18,13 @@ app.config.from_object(Config)
 
 babel = Babel(app)
 
+
 @babel.localeselector
 def get_locale() -> str:
     """Gets the locale from the request"""
     locale = request.args.get('locale')
-    if locale and locale in app.config['LANGUAGES']:
+    if locale in app.config['LANGUAGES']:
+        print(locale)
         return locale
 
     return request.accept_languages.best_match(app.config['LANGUAGES'])
@@ -36,6 +38,7 @@ def index() -> Any:
     Returns:
         The rendered index template.
     """
+
     return render_template('0-index.html')
 
 
