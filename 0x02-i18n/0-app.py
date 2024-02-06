@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """this module creates a Flask app"""
 from flask import Flask, render_template
-
+from typing import Any
 app = Flask(__name__)
 
 @app.route('/')
-def index():
+def index() -> Any:
     """
     Renders the index template.
 
